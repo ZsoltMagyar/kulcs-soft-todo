@@ -1,0 +1,7 @@
+<div class="todo-item" [ngClass]="{'todo-item--finished': todo.finished, 'todo-item--priority': todo.priority}">
+  <p class="todo-item__description">{{ todo.todo | todoShortening:25 }}</p>
+  <span class="spacer"></span>
+  <mat-icon [routerLink]="[todo.id]">edit</mat-icon>
+  <mat-icon (click)="deleteTodo()">delete</mat-icon>
+  <mat-checkbox (change)="todoStateChange($event)" [checked]="todo.finished" [disabled]="todo.finished" color="primary"></mat-checkbox>
+</div>

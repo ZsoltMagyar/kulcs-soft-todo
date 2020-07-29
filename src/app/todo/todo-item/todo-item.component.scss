@@ -1,0 +1,29 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin-bottom: .2rem;
+  padding: 1rem;
+  background-color: whitesmoke;
+  font-size: 1.2rem;
+
+  &__description {
+    margin: 0;
+  }
+
+  &--priority {
+    border-left: 10px inset red;
+  }
+
+  &--finished {
+    background-color: yellowgreen;
+    p {
+      text-decoration: line-through;
+    }
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

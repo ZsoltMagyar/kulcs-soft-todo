@@ -1,0 +1,22 @@
+<div class="todo-details">
+  <form [formGroup]="form" (submit)="onSubmit()" class="todo-details-form">
+    <mat-form-field class="todo-details__textarea">
+      <mat-label>Todo</mat-label>
+      <textarea  matInput formControlName="todo" rows="4" cols="50" maxlength="255"></textarea>
+    </mat-form-field>
+    <div class="length-counter">
+      <span>
+        {{ todoLength }} / 255
+      </span>
+    </div>
+    <section class="todo-details__checkboxes">
+      <mat-checkbox formControlName="priority">Priority</mat-checkbox>
+      <mat-checkbox formControlName="finished">Finished</mat-checkbox>
+    </section>
+    <section class="todo-details__submit">
+      <button type="submit" mat-raised-button color="primary" (click)="onSubmit()">
+        Submit
+      </button>
+    </section>
+  </form>
+</div>

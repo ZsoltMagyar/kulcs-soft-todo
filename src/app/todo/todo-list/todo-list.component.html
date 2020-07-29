@@ -1,0 +1,22 @@
+<section class="todo-list">
+  <mat-tab-group>
+    <mat-tab label="All">
+      <div class="todo-list__items">
+        <app-todo-item *ngFor="let todo of allTodos$ | async" [todo]="todo" (delete)="deleteTodo($event)" (finish)="todoFinish($event)"></app-todo-item>
+      </div>
+    </mat-tab>
+    <mat-tab label="Pending">
+      <div class="todo-list__items">
+        <app-todo-item *ngFor="let todo of pendingTodos$ | async" [todo]="todo" (delete)="deleteTodo($event)" (finish)="todoFinish($event)"></app-todo-item>
+      </div>
+    </mat-tab>
+    <mat-tab label="Finished">
+      <div class="todo-list__items">
+        <app-todo-item *ngFor="let todo of finishedTodos$ | async" [todo]="todo" (delete)="deleteTodo($event)" (finish)="todoFinish($event)"></app-todo-item>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</section>
+<nav class="fixed-bottom-nav">
+  <button mat-fab routerLink="create" color="primary"><mat-icon>plus_one</mat-icon></button>
+</nav>
